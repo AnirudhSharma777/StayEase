@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "23fb77dd-ec09-4e18-bd20-c4e128dcfdff",
+		"name": "StayEase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26813872"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Anirudh\",\r\n    \"lastname\": \"Sharma\",\r\n    \"email\": \"anirudhsharma857000@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"anirudhsharma857000@gmail.com\",\r\n    \"password\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"anirudhsharma857000@gmail.com\",\r\n    \"verificationCode\":\"613272\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/auth/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResendVerificationCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"anirudhsharma857000@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/auth/resend",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"resend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "getAllHotelList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHotelById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwM2FuaXJ1ZGgyMDAxQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyMDE0MiwiZXhwIjoxNzM1MDIzNzQyfQ.Ro2ZfmVvDaERIyALis98Amf7tPqpJGdBYn5P_bTZ-fM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAxNzM1NywiZXhwIjoxNzM1MDIwOTU3fQ.Xr0JFTYn2LwGseRFMzryMsv_yxe2KpxVvMedlSGO9nc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdminController",
+			"item": [
+				{
+					"name": "CreateHotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwM2FuaXJ1ZGgyMDAxQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyMDE0MiwiZXhwIjoxNzM1MDIzNzQyfQ.Ro2ZfmVvDaERIyALis98Amf7tPqpJGdBYn5P_bTZ-fM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hotelname\": \"Urban Heights Hotel\",\r\n  \"address\": \"321 City Center Blvd, New York, NY\",\r\n  \"location\": [40.7128, -74.0060],\r\n  \"description\": \"A modern hotel located in the heart of the city.\",\r\n  \"availability\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/admin/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteHotelById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwM2FuaXJ1ZGgyMDAxQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyMDE0MiwiZXhwIjoxNzM1MDIzNzQyfQ.Ro2ZfmVvDaERIyALis98Amf7tPqpJGdBYn5P_bTZ-fM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/admin/hotels/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"hotels",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetHotelById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyMzE5MywiZXhwIjoxNzM1MDI2NzkzfQ.fLm5GXAR4zqPKSlaJ1PSEpSfpRmgCUCSg4_ZkQk6NJQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/admin/hotels/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"hotels",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyODg5NywiZXhwIjoxNzM1MDMyNDk3fQ.ZCmwB6oU6MzUMMI44iea8rJBMFGeZeTG_frv5qmVT7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/admin/rooms/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"rooms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ManagerController",
+			"item": [
+				{
+					"name": "UpdateHotelDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyMzE5MywiZXhwIjoxNzM1MDI2NzkzfQ.fLm5GXAR4zqPKSlaJ1PSEpSfpRmgCUCSg4_ZkQk6NJQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/management/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"management",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRooms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyODg5NywiZXhwIjoxNzM1MDMyNDk3fQ.ZCmwB6oU6MzUMMI44iea8rJBMFGeZeTG_frv5qmVT7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Luxury Suite\",\r\n    \"description\": \"A spacious suite with a panoramic view.\",\r\n    \"totalNumberOfRooms\": 3,\r\n    \"hotelId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/management/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"management",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRoomDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyODg5NywiZXhwIjoxNzM1MDMyNDk3fQ.ZCmwB6oU6MzUMMI44iea8rJBMFGeZeTG_frv5qmVT7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Luxury Suite\",\r\n    \"description\": \"A spacious suite with a panoramic view.\",\r\n    \"totalNumberOfRooms\": 6,\r\n    \"hotelId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/management/rooms/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"management",
+								"rooms",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyODg5NywiZXhwIjoxNzM1MDMyNDk3fQ.ZCmwB6oU6MzUMMI44iea8rJBMFGeZeTG_frv5qmVT7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/management/rooms/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"management",
+								"rooms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRoomList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmlydWRoc2hhcm1hODU3MDAwQGdtYWlsLmNvbSIsImlhdCI6MTczNTAyODg5NywiZXhwIjoxNzM1MDMyNDk3fQ.ZCmwB6oU6MzUMMI44iea8rJBMFGeZeTG_frv5qmVT7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/management/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"management",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

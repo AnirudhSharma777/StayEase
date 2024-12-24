@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Dto.HotelRequest;
 import com.example.demo.Entities.Hotel;
 import com.example.demo.Services.HotelService;
+import com.example.demo.Services.RoomService;
 
 @RestController
 @RequestMapping("/api/v1/admin")
@@ -20,8 +22,11 @@ public class AdminController {
 
     private final HotelService hotelService;
 
-    public AdminController(HotelService hotelService) {
+    private final RoomService roomService;
+
+    public AdminController(HotelService hotelService,RoomService roomService) {
         this.hotelService = hotelService;
+        this.roomService = roomService;
     }
 
     
@@ -37,9 +42,9 @@ public class AdminController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/hotels/{id}")
-    public ResponseEntity<Hotel> getHotel(@PathVariable("id") Long id) {
-        Hotel hotel = hotelService.getHotel(id);
-        return new ResponseEntity<>(hotel,HttpStatus.OK);
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteRoomById(@PathVariable Long id) {
+        roomService.deleteRoomById(id);
     }
 }
